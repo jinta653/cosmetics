@@ -111,15 +111,15 @@ public class BoardServlet extends HttpServlet {
 			
 			
 			int rowTotal = dao.getCount();
-			// 객체를 생성한다 (현재페이지, 전체글수, 페이지당표시할 글의수, 한번에 표시할 페이징블록수)    
+			// オブジェクトを生成する (現在のページ、全体グルス、ペイジダン表示すること義手、一度に表示するページングブロック数)    
 			PageNavigation pageNav = new PageNavigation(nowPage, rowTotal , 10, 5);
 			
 			pageNav.Debug();
 			
-			request.setAttribute("pageIsPrev",    pageNav.isPrevPage());    // 이전페이지 블록의 존재유무
-			request.setAttribute("pageIsNext",    pageNav.isNextPage());    // 다음페이지 블록의 존재유무
-			request.setAttribute("pageStart",    pageNav.getStartPage());// 시작페이지 번호
-			request.setAttribute("pageEnd",        pageNav.getEndPage());    // 종료페이지 번호
+			request.setAttribute("pageIsPrev",    pageNav.isPrevPage());    // 以前のページブロックの存在有無
+			request.setAttribute("pageIsNext",    pageNav.isNextPage());    // 次のページブロックの存在有無
+			request.setAttribute("pageStart",    pageNav.getStartPage());// スタートページ番号
+			request.setAttribute("pageEnd",        pageNav.getEndPage());    // 終了ページ番号
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

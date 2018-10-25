@@ -31,7 +31,7 @@
   	<script type="text/javascript" src="SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
 	<script type="text/javascript">
 		$(function(){
-	    //전역변수선언
+	    //全域変数宣言
 	    var tips_editor_object = [];
 	     
 	    nhn.husky.EZCreator.createInIFrame({
@@ -39,23 +39,23 @@
 	        elPlaceHolder: "tips_smarteditor",
 	        sSkinURI: "SE2/SmartEditor2Skin.html", 
 	        htParams : {
-	            // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
+	        	// ツールバーを使用（o,x） (true:使用/ false:使用しない)
 	            bUseToolbar : true,             
-	            // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
+	            // 入力窓のサイズチョジョルパを使用（o,x） (true:使用/ false:使用しない)
 	            bUseVerticalResizer : true,     
-	            // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+	         // モードタブ(Editor | HTML | TEXT) 使用 （o,x） (true:使用/ false:使用しない )
 	            bUseModeChanger : true, 
 	        }
 	    });
 	     
-	    //전송버튼 클릭이벤트
+	    //送信ボタンクリックイベント
 	    $("#tips_savebutton").click(function(){
-	        //id가 smarteditor인 textarea에 에디터에서 대입
+	        //idが smarteditorの textareaにエディターで代入
 	        tips_editor_object.getById["tips_smarteditor"].exec("UPDATE_CONTENTS_FIELD", []);
 	         
-	        // 이부분에 에디터 validation 검증
+	        // この部分に、エディタ validation 検証
 	         
-	        //폼 submit
+	        //フォーム submit
 	        self.window.alert("입력한 글을 저장하였습니다.")
 	        $("#tips_frm").submit();
 	    })
